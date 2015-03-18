@@ -1,0 +1,24 @@
+#!/bin/sh
+
+PROG="nodejs"
+PROG_APTH="/data/app/$PROG"
+MSG_PREFIX=" *"
+echo "$MSG_PREFIX start install $PROG"
+
+if [ -d "$PROG_APTH" ]
+then
+        rm -rf $PROG_APTH
+fi
+
+mkdir -p $PROG_APTH
+
+cp -v -n -r ./bin $PROG_APTH/
+cp -v -n -r ./include $PROG_APTH/
+cp -v -n -r ./lib $PROG_APTH/
+cp -v -n -r ./share $PROG_APTH/
+
+ln  -f -s $PROG_APTH/bin/node /usr/bin/nodejs && ln -f -s $PROG_APTH/bin/node /usr/bin/node
+
+echo "$MSG_PREFIX install sucess $PROG"
+
+$PROG -v
