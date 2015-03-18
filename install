@@ -17,7 +17,7 @@ cp -v -n -r ./include $PROG_APTH/
 cp -v -n -r ./lib $PROG_APTH/
 cp -v -n -r ./share $PROG_APTH/
 
-ln  -f -s $PROG_APTH/bin/node /usr/bin/nodejs && ln -f -s $PROG_APTH/bin/node /usr/bin/node
+ln  -f -s $PROG_APTH/bin/node /usr/bin/nodejs && ln -f -s $PROG_APTH/bin/node /usr/bin/node && ln -f -s $PROG_APTH/bin/npm /usr/bin/npm
 
 echo "$MSG_PREFIX install sucess $PROG"
 
